@@ -1,4 +1,4 @@
-language: bash
+language: shell
 
 os:
   - linux
@@ -28,7 +28,7 @@ before_install:
     esac
     make --version
 
-scripts:
+script:
   - cd test
   - make env
   - make env-info
