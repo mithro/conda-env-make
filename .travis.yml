@@ -5,6 +5,11 @@ os:
   - osx
   - windows
 
+jobs:
+  allow_failures:
+    - os: windows
+  fast_finish: true
+
 # Fix the symlinks for Windows
 git:
   symlinks: true
