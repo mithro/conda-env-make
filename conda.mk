@@ -94,7 +94,7 @@ $(DOWNLOADS_DIR):
 
 ifeq ($(OS_TYPE),Windows)
 $(CONDA_INSTALLER_DOWNLOAD): | $(DOWNLOADS_DIR)
-	wget https://repo.anaconda.com/miniconda/$(CONDA_INSTALLER) -O $(CONDA_INSTALLER_DOWNLOAD) 2>&1
+	powershell.exe -Command "Invoke-WebRequest -Uri https://repo.anaconda.com/miniconda/$(CONDA_INSTALLER) -OutFile $(CONDA_INSTALLER_DOWNLOAD)"
 else
 $(CONDA_INSTALLER_DOWNLOAD): | $(DOWNLOADS_DIR)
 	wget https://repo.anaconda.com/miniconda/$(CONDA_INSTALLER) -O $(CONDA_INSTALLER_DOWNLOAD) 2>&1 | $(CAT)
